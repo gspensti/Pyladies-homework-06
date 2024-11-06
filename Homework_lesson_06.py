@@ -29,4 +29,20 @@ def move (string, position_number, character):
     board_update = part_a + character + part_b
     return (board_update)
 
-#def player_move (string, [], x,o)
+# Write a player_move function that accepts a string with the game board, 
+# asks the player which position he wants to play and returns the updated game board with the player's move. 
+# The function should reject negative or too large numbers or 
+# moves to an occupied position. 
+# If the user has entered a wrong argument, the function should ask again (to get correct answer).
+
+def player_move (string):
+    while (True):
+        position_number = int(input("Make your move!\n Tell me where to put your x (number beweteen 1 and 20): "))
+        if (position_number >= 1) & (position_number <= 20):
+            player_position = string[(position_number - 1): position_number]
+            if player_position == '-':
+                return move(string, position_number, 'x')
+            else:
+                print("Someone has been here before!")
+        else: 
+            print("I can't work with that! * dramatic gesture *") 
