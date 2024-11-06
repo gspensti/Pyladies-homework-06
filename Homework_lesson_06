@@ -6,6 +6,7 @@
 #"!" – Draw (the board is full but nobody has won)
 # "-" – Rest (i.e. the game is not finished)
 
+
 def evaluate (string):
     crosses = "xxx"
     noughts = "ooo"
@@ -22,4 +23,10 @@ def evaluate (string):
 # Write a move function that accepts the string with the game board, a position number (0-19) and a (x or o) mark 
 # and returns a game board  (i.e., a string with the given mark placed in the given position). 
 
-# def move (string, [], x, o):
+def move (string, position_number, character):
+    part_a = string[:(position_number - 1)]
+    part_b = string[position_number:]
+    board_update = part_a + character + part_b
+    return (board_update)
+
+#def player_move (string, [], x,o)
