@@ -6,7 +6,6 @@
 #"!" – Draw (the board is full but nobody has won)
 # "-" – Rest (i.e. the game is not finished)
 
-
 def evaluate (string):
     crosses = "xxx"
     noughts = "ooo"
@@ -46,3 +45,19 @@ def player_move (string):
                 print("Someone has been here before!")
         else: 
             print("I can't work with that! * dramatic gesture *") 
+
+# Write a pc_move function that accepts the string with the game board. It will select a position to play, and returns the game board with the computer's move.
+# Use a simple random "strategy":
+
+# Select a random number from 0 to 19.
+# If the position is empty, place the computer's mark there.
+# If not, repeat from the first step (select another random number). The function header should look something like this:
+
+from random import randrange
+def pc_move (string):
+    while (True):
+        pc_choice = 0
+        if string[pc_choice] == '-':
+            string = string[:pc_choice] + 'o' + string[pc_choice +1]
+            break
+    return string
