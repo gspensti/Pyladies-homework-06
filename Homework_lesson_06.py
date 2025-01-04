@@ -7,8 +7,8 @@
 # "-" – Rest (i.e. the game is not finished)
 from random import randrange
 
-def evaluate (string):
-    crosses = "xxx" # variable for player win
+def evaluate (string): 
+    crosses = "xxx" # variable for player win 
     noughts = "ooo" # variable for pc win
     full = "-" # variable for draw
     if crosses in string: 
@@ -18,12 +18,14 @@ def evaluate (string):
     elif full not in string:        
         return "!" # tells tictactoe function if there's a draw
     else:
-        return "-" # tellls tictactoe that game isn't finished yet
+        return "-" # tells tictactoe that game isn't finished yet
+    
+
 
 # Write a move function that accepts the string with the game board, a position number (0-19) and a (x or o) mark 
 # and returns a game board  (i.e., a string with the given mark placed in the given position). 
 
-def move (string, position_number, character):
+def move (string, position_number, character):  # 2 tests here 
     part_a = string[:position_number] 
     part_b = string[position_number + 1:]
     board_update = part_a + character + part_b # splits string so that character can be inserted at either player or pc position
@@ -88,5 +90,5 @@ def tictactoe ():
             break  # game is stoppped until there's a winner/draw
     return board # game is played as long as theres no winner/no draw
 
-
-tictactoe() 
+if __name__ == "__main__":
+    tictactoe() 
